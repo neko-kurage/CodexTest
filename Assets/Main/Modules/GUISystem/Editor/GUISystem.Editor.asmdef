@@ -1,0 +1,18 @@
+{
+    "name": "GUISystem.Editor",
+    "rootNamespace": "GUISystem.Editor",
+    "references": [
+        "GUID:fbb0d62d8e0b44f63b0d9a71890b3faa"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
