@@ -30,28 +30,6 @@ namespace GUISystem
             _state = new TransformState(transform);
         }
 
-#if UNITY_EDITOR
-        void OnEnable()
-        {
-            EditorApplication.hierarchyChanged += MarkDirty;
-        }
-
-        void OnDisable()
-        {
-            EditorApplication.hierarchyChanged -= MarkDirty;
-        }
-#endif
-
-        void OnTransformParentChanged()
-        {
-            MarkDirty();
-        }
-
-        void OnTransformChildrenChanged()
-        {
-            MarkDirty();
-        }
-
         void OnTransformParentChanged()
         {
             MarkDirty();
@@ -121,7 +99,6 @@ namespace GUISystem
         /// 階層変化を記録します。
         /// </summary>
         private void MarkDirty()
-        void MarkDirty()
         {
             _hierarchyDirty = true;
         }
