@@ -9,6 +9,10 @@ namespace GUISystem.Tests
     public class TransformStateTests
     {
         [Test]
+        /// <summary>
+        /// LocalPosition変更を検知できるかを検証します。
+        /// </summary>
+
         public void DetectsPositionChange()
         {
             GameObject go = new GameObject("test");
@@ -19,6 +23,9 @@ namespace GUISystem.Tests
         }
 
         [Test]
+        /// <summary>
+        /// Capture後にHasChangedがfalseになることを確認します。
+        /// </summary>
         public void CaptureUpdatesValues()
         {
             GameObject go = new GameObject("test");

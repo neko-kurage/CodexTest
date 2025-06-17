@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -26,6 +28,28 @@ namespace GUISystem
         void Awake()
         {
             _state = new TransformState(transform);
+        }
+
+#if UNITY_EDITOR
+        void OnEnable()
+        {
+            EditorApplication.hierarchyChanged += MarkDirty;
+        }
+
+        void OnDisable()
+        {
+            EditorApplication.hierarchyChanged -= MarkDirty;
+        }
+#endif
+
+        void OnTransformParentChanged()
+        {
+            MarkDirty();
+        }
+
+        void OnTransformChildrenChanged()
+        {
+            MarkDirty();
         }
 
         void OnTransformParentChanged()
@@ -93,6 +117,10 @@ namespace GUISystem
             _onTransformChanged.RemoveListener(handler.OnTransformChanged);
         }
 
+        /// <summary>
+        /// 階層変化を記録します。
+        /// </summary>
+        private void MarkDirty()
         void MarkDirty()
         {
             _hierarchyDirty = true;
