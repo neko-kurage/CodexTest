@@ -12,6 +12,7 @@ namespace GUISystem.Tests
         /// <summary>
         /// LocalPosition変更を検知できるかを検証します。
         /// </summary>
+
         public void DetectsPositionChange()
         {
             GameObject go = new GameObject("test");
