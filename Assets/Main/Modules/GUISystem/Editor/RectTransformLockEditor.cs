@@ -33,7 +33,7 @@ namespace GUISystem.Editor
         public override void OnInspectorGUI()
         {
             bool disableSize = false;
-            foreach (Object obj in targets)
+            foreach (UnityEngine.Object obj in targets)
             {
                 RectTransform rt = obj as RectTransform;
                 if (rt != null && rt.GetComponent<RectTransformViewportSize>() != null)
