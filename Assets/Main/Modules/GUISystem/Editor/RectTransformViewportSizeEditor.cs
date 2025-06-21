@@ -1,6 +1,5 @@
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEngine;
 
 namespace GUISystem.Editor
 {
@@ -13,7 +12,7 @@ namespace GUISystem.Editor
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            EditorGUILayout.HelpBox("RectTransformのサイズはこのコンポーネントによって制御されます。", MessageType.Info);
+            EditorGUILayout.HelpBox("RectTransformのサイズはこのコンポーネントによってDrivenRectTransformTrackerを使用して制御されます。RectTransformのSize Deltaプロパティは自動的に無効化されます。", MessageType.Info);
         }
     }
 }
