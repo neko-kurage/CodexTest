@@ -30,16 +30,6 @@ namespace GUISystem
             _state = new TransformState(transform);
         }
 
-        void OnTransformParentChanged()
-        {
-            MarkDirty();
-        }
-
-        void OnTransformChildrenChanged()
-        {
-            MarkDirty();
-        }
-
 #if UNITY_EDITOR
         void OnEnable()
         {
@@ -51,6 +41,16 @@ namespace GUISystem
             EditorApplication.hierarchyChanged -= MarkDirty;
         }
 #endif
+
+        void OnTransformParentChanged()
+        {
+            MarkDirty();
+        }
+
+        void OnTransformChildrenChanged()
+        {
+            MarkDirty();
+        }
 
         void LateUpdate()
         {
